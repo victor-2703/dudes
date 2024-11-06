@@ -11,7 +11,7 @@ class Dude {
     this.y = y;
     this.size = size;
     this.col = col;
-    this.velocity = new PVector(random(-1, 1), random(-1, 1));
+    this.velocity = PVector.random2D();
     this.relation = relation;
   }
   
