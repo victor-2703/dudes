@@ -15,7 +15,18 @@ class Dude {
     this.relation = relation;
   }
   
-  public void update() {
-    
+  public void update(PVector affinity) {
+    float xDirection = affinity.x - x;
+    float yDirection = affinity.y - y;
+    if (!relation) {
+      xDirection = -xDirection;
+      yDirection = -yDirection;
+    }
+
+    float magnitude = (float) Math.sqrt(Math.pow(xDirection, 2) + Math.pow(yDirection, 2));
+    if (magnitude != 0) {
+      xDirection = (xDirection / magnitude);
+      yDirection = (yDirection / magnitude);
+    }
   }
 }
