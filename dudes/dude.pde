@@ -37,5 +37,15 @@ class Dude {
       velocity.normalize();
       velocity.mult(2);
     }
+    
+    x += velocity.mag() * cos(atan2(velocity.y, velocity.x));
+    y += velocity.mag() * sin(atan2(velocity.y, velocity.x));
+
+    if (x < 0 || x > width) {
+      velocity.rotate(PI);
+    }
+    if (y < 0 || y > height) {
+      velocity.rotate(PI);
+    }
   }
 }
