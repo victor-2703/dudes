@@ -1,6 +1,7 @@
 class Dude {
   float x;
   float y;
+  float d;
   float size;
   color col;
   PVector velocity;
@@ -9,6 +10,7 @@ class Dude {
   public Dude(float x, float y, float size, color col, PVector velocity, boolean relation) {
     this.x = x;
     this.y = y;
+    this.d = d;
     this.size = size;
     this.col = col;
     this.velocity = PVector.random2D();
@@ -47,5 +49,10 @@ class Dude {
     if (y < 0 || y > height) {
       velocity.rotate(PI);
     }
+  }
+  
+  void show() {
+    fill(col);
+    circle(x, y, d);
   }
 }
