@@ -28,5 +28,14 @@ class Dude {
       xDirection = (xDirection / magnitude);
       yDirection = (yDirection / magnitude);
     }
+    
+    PVector direction = new PVector(xDirection, yDirection);
+    velocity.add(direction);
+    
+    float speed = (float) Math.sqrt(velocity.magSq());
+    if (speed > 2) {
+      velocity.normalize();
+      velocity.mult(2);
+    }
   }
 }
