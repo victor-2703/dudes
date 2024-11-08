@@ -28,6 +28,21 @@ public class Dude {
     }
   }
   
+  
+  public void update(PVector target) {
+    PVector velocity2 = new PVector((target.x - x) / 100, (target.y - y) / 100);
+    
+    x += velocity2.x;
+    y += velocity2.y;
+    
+    if (x < size / 2 || x > width - size / 2) {
+      velocity.set(-velocity2.x, velocity2.y);
+    }
+    if (y < size / 2 || y > height - size / 2) {
+      velocity.set(velocity2.x, -velocity2.y);
+    }
+  }
+  
   void show() {
     fill(col);
     circle(x, y, size);
